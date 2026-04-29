@@ -27,7 +27,8 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN")  # задать в Railway → Variables
 ADMIN_ID   = int(os.environ.get("ADMIN_ID", "1623431505"))  # @AleksandrMaterukhin
 SHEETS_ID  = os.environ.get("SHEETS_ID", "")       # ID Google Sheets
 YUKASSA_LINK = "https://yoomoney.ru/TO/ВАША_ССЫЛКА"  # ссылка ЮKassa
-CHANNEL    = "@seodrive_ai"
+CHANNEL    = "@SEOdrive_AI"
+CHANNEL_ID = -1003956464811
 
 # ── Состояния ConversationHandler ────────────────────────────────────────────
 (
@@ -84,7 +85,7 @@ def main_keyboard():
     return InlineKeyboardMarkup([
         [InlineKeyboardButton("🔍 Бесплатный аудит", callback_data="audit_start")],
         [InlineKeyboardButton("🚀 Подключиться (2 000 ₽/мес)", callback_data="onboard_start")],
-        [InlineKeyboardButton("📺 Наш канал", url=f"https://t.me/seodrive_ai")],
+        [InlineKeyboardButton("📺 Наш канал", url="https://t.me/SEOdrive_AI")],
     ])
 
 
@@ -330,11 +331,11 @@ async def payment_confirm(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         "• Найдёт лучшие запросы через Wordstat и подсказки\n"
         "• Внесёт первые правки на сайт\n"
         "• Пришлёт вам отчёт\n\n"
-        f"📺 Подпишитесь на канал {CHANNEL} — там выходят советы и кейсы.\n\n"
+        f"📺 Подпишитесь на канал https://t.me/SEOdrive_AI — там выходят советы и кейсы.\n\n"
         "Если появятся вопросы — пишите сюда.",
         parse_mode="Markdown",
         reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton(f"📺 Подписаться на {CHANNEL}", url="https://t.me/seodrive_ai")],
+            [InlineKeyboardButton(f"📺 Подписаться на @SEOdrive_AI", url="https://t.me/SEOdrive_AI")],
         ])
     )
 
