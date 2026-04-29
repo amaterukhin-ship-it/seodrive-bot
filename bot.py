@@ -23,7 +23,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # ── Конфигурация ─────────────────────────────────────────────────────────────
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "8705014463:AAHkZhfe18J6X_jUHu1asaR6MUs-fAFCFRs")
+BOT_TOKEN = os.environ.get("BOT_TOKEN")  # задать в Railway → Variables
 ADMIN_ID   = int(os.environ.get("ADMIN_ID", "1623431505"))  # @AleksandrMaterukhin
 SHEETS_ID  = os.environ.get("SHEETS_ID", "")       # ID Google Sheets
 YUKASSA_LINK = "https://yoomoney.ru/TO/ВАША_ССЫЛКА"  # ссылка ЮKassa
