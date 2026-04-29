@@ -90,6 +90,18 @@ def main_keyboard():
 
 # ── /start ───────────────────────────────────────────────────────────────────
 async def start(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
+    user = update.effective_user
+    # Уведомление администратору о каждом новом старте
+    if ADMIN_ID:
+        source = ctx.args[0] if ctx.args else 'прямой'
+        await ctx.bot.send_message(
+            ADMIN_ID,
+            f"👤 Новый пользователь зашёл в бота!\n"
+            f"Имя: {user.full_name}\n"
+            f"Username: @{user.username or '—'}\n"
+            f"ID: {user.id}\n"
+            f"Источник: {source}"
+        )
     await update.message.reply_text(
         WELCOME_TEXT,
         parse_mode="Markdown",
